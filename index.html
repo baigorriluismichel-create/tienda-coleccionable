@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colección Épica | Tienda de coleccionables</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header>
+  <div class="contenedor barra">
+    <a class="marca" href="#inicio">
+      <span class="simbolo">✦</span>
+      <span>
+        <strong>Colección Épica</strong>
+        <small>Tu universo de coleccionables</small>
+      </span>
+    </a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="header-acciones">
+      <button class="modo-admin-btn" id="modo-admin" title="Modo administrador">⚙</button>
+      <button class="carrito-btn" id="abrir-carrito" aria-label="Abrir carrito">
+        <span class="carrito-icono">🛒</span>
+        <span class="carrito-contador" id="carrito-contador">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- PANEL DEL CARRITO -->
+<div class="carrito-overlay" id="carrito-overlay"></div>
+<aside class="carrito-panel" id="carrito-panel">
+  <div class="carrito-header">
+    <h2>Tu carrito</h2>
+    <button class="cerrar-carrito" id="cerrar-carrito" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <div class="carrito-items" id="carrito-items"></div>
+  <div class="carrito-vacio" id="carrito-vacio">
+    <p>Tu carrito está vacío</p>
+    <small>Agregá productos para empezar</small>
+  </div>
+  <div class="carrito-footer" id="carrito-footer" hidden>
+    <div class="carrito-total">
+      <span>Total</span>
+      <strong id="carrito-total">$ 0</strong>
+    </div>
+    <button class="boton boton-carrito" id="finalizar-compra">Consultar por WhatsApp</button>
+    <button class="boton-vaciar" id="vaciar-carrito">Vaciar carrito</button>
+  </div>
+</aside>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="contenedor hero-grid">
+      <div>
+        <p class="etiqueta">PARA COLECCIONISTAS</p>
+        <h1>Encontrá tu próxima <span>pieza favorita.</span></h1>
+        <p>Juegos de mesa, figuras, maquetas, cartas coleccionables y mucho más en un solo lugar.</p>
+        <a class="boton" href="#productos">Explorar productos</a>
+      </div>
+      <div class="ilustracion">
+        <span>✦</span>
+        <div class="caja">
+          <small>EDICIÓN</small>
+          <strong>COLECCIONISTA</strong>
+          <b>CE</b>
+        </div>
+        <span>♜</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section class="seccion blanco" id="categorias">
+    <div class="contenedor">
+      <p class="etiqueta">EXPLORÁ POR TIPO</p>
+      <h2>Encontrá tu categoría</h2>
+      <div class="categorias">
+        <a href="#productos" data-categoria="Juegos de mesa">
+          <b>♟</b>
+          <strong>Juegos de mesa</strong>
+          <small>Para compartir</small>
+        </a>
+        <a href="#productos" data-categoria="Figuras y miniaturas">
+          <b>♜</b>
+          <strong>Figuras y miniaturas</strong>
+          <small>Detalles únicos</small>
+        </a>
+        <a href="#productos" data-categoria="Maquetas">
+          <b>⌁</b>
+          <strong>Maquetas</strong>
+          <small>Modelos para exhibir</small>
+        </a>
+        <a href="#productos" data-categoria="Cartas coleccionables">
+          <b>▤</b>
+          <strong>Cartas coleccionables</strong>
+          <small>Ampliá tu colección</small>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="seccion" id="productos">
+    <div class="contenedor">
+      <div class="cabecera-productos">
+        <div>
+          <p class="etiqueta">NUESTRO CATÁLOGO</p>
+          <h2>Productos destacados</h2>
+        </div>
+        <input id="busqueda" type="search" placeholder="Buscar un producto..." aria-label="Buscar un producto">
+      </div>
+
+      <div class="filtros">
+        <button class="activo" data-filtro="Todos">Todos</button>
+        <button data-filtro="Juegos de mesa">Juegos de mesa</button>
+        <button data-filtro="Figuras y miniaturas">Figuras y miniaturas</button>
+        <button data-filtro="Maquetas">Maquetas</button>
+        <button data-filtro="Cartas coleccionables">Cartas coleccionables</button>
+      </div>
+
+      <div class="productos" id="lista-productos">
+
+        <article class="producto" data-categoria="Juegos de mesa" data-nombre="Catan" data-id="catan">
+          <div class="imagen"><img src="img/catan.jpg" alt="Catan"></div>
+          <div class="info">
+            <small>Juegos de mesa</small>
+            <h3>Catan</h3>
+            <p>Juego de mesa de estrategia y comercio. Ideal para jugar en grupo.</p>
+            <div class="pie-producto">
+              <strong>$ 45.000</strong>
+              <button class="agregar-carrito" data-id="catan" data-nombre="Catan" data-precio="45000" data-imagen="img/catan.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="catan">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Juegos de mesa" data-nombre="Monopoly Clasico" data-id="monopoly">
+          <div class="imagen"><img src="img/monopoly.jpg" alt="Monopoly Clasico"></div>
+          <div class="info">
+            <small>Juegos de mesa</small>
+            <h3>Monopoly Clásico</h3>
+            <p>El clásico juego de compraventa de propiedades. Diversión para toda la familia.</p>
+            <div class="pie-producto">
+              <strong>$ 38.000</strong>
+              <button class="agregar-carrito" data-id="monopoly" data-nombre="Monopoly Clasico" data-precio="38000" data-imagen="img/monopoly.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="monopoly">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Figuras y miniaturas" data-nombre="Warhammer 40K Space Marines" data-id="warhammer">
+          <div class="imagen"><img src="img/warhammer.jpg" alt="Warhammer 40K"></div>
+          <div class="info">
+            <small>Figuras y miniaturas</small>
+            <h3>Warhammer 40K Space Marines</h3>
+            <p>Caja de miniaturas para armar y pintar. Perfecta para iniciar tu ejército.</p>
+            <div class="pie-producto">
+              <strong>$ 85.000</strong>
+              <button class="agregar-carrito" data-id="warhammer" data-nombre="Warhammer 40K Space Marines" data-precio="85000" data-imagen="img/warhammer.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="warhammer">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Maquetas" data-nombre="Nissan Skyline R34" data-id="skyline">
+          <div class="imagen"><img src="img/skyline.jpg" alt="Nissan Skyline R34"></div>
+          <div class="info">
+            <small>Maquetas</small>
+            <h3>Nissan Skyline R34</h3>
+            <p>Modelo a escala 1:24 del icónico Skyline. Detalle y estilo garantizados.</p>
+            <div class="pie-producto">
+              <strong>$ 52.000</strong>
+              <button class="agregar-carrito" data-id="skyline" data-nombre="Nissan Skyline R34" data-precio="52000" data-imagen="img/skyline.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="skyline">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Maquetas" data-nombre="Toyota Supra MK4" data-id="supra">
+          <div class="imagen"><img src="img/supra.jpg" alt="Toyota Supra MK4"></div>
+          <div class="info">
+            <small>Maquetas</small>
+            <h3>Toyota Supra MK4</h3>
+            <p>Modelo a escala 1:24 del legendario Supra. Ideal para coleccionistas de autos.</p>
+            <div class="pie-producto">
+              <strong>$ 49.000</strong>
+              <button class="agregar-carrito" data-id="supra" data-nombre="Toyota Supra MK4" data-precio="49000" data-imagen="img/supra.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="supra">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Cartas coleccionables" data-nombre="Pokemon Booster" data-id="pokemon-booster">
+          <div class="imagen"><img src="img/pokemon-booster.jpg" alt="Pokémon Booster"></div>
+          <div class="info">
+            <small>Cartas coleccionables</small>
+            <h3>Pokémon Booster</h3>
+            <p>Sobre individual de cartas Pokémon. ¡Abrí y descubrí qué cartas te tocan!</p>
+            <div class="pie-producto">
+              <strong>$ 7.500</strong>
+              <button class="agregar-carrito" data-id="pokemon-booster" data-nombre="Pokemon Booster" data-precio="7500" data-imagen="img/pokemon-booster.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="pokemon-booster">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Cartas coleccionables" data-nombre="Pokemon Elite Trainer Box" data-id="pokemon-etb">
+          <div class="imagen"><img src="img/pokemon-etb.jpg" alt="Pokémon Elite Trainer Box"></div>
+          <div class="info">
+            <small>Cartas coleccionables</small>
+            <h3>Pokémon Elite Trainer Box</h3>
+            <p>Caja especial de cartas Pokémon. Ideal para jugadores y coleccionistas.</p>
+            <div class="pie-producto">
+              <strong>$ 65.000</strong>
+              <button class="agregar-carrito" data-id="pokemon-etb" data-nombre="Pokemon Elite Trainer Box" data-precio="65000" data-imagen="img/pokemon-etb.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="pokemon-etb">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Figuras y miniaturas" data-nombre="Dragon Miniatura" data-id="dragon">
+          <div class="imagen"><img src="img/dragon.jpg" alt="Dragon Miniatura"></div>
+          <div class="info">
+            <small>Figuras y miniaturas</small>
+            <h3>Dragon Miniatura</h3>
+            <p>Miniatura de dragón para juegos de rol y colecciones.</p>
+            <div class="pie-producto">
+              <strong>$ 18.000</strong>
+              <button class="agregar-carrito" data-id="dragon" data-nombre="Dragon Miniatura" data-precio="18000" data-imagen="img/dragon.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="dragon">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Juegos de mesa" data-nombre="Dungeons and Dragons Starter Set" data-id="dnd">
+          <div class="imagen"><img src="img/dnd.jpg" alt="D&D Starter Set"></div>
+          <div class="info">
+            <small>Juegos de mesa</small>
+            <h3>D&D Starter Set</h3>
+            <p>Set inicial para jugar Dungeons and Dragons. Ideal para principiantes.</p>
+            <div class="pie-producto">
+              <strong>$ 55.000</strong>
+              <button class="agregar-carrito" data-id="dnd" data-nombre="Dungeons and Dragons Starter Set" data-precio="55000" data-imagen="img/dnd.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="dnd">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Juegos de mesa" data-nombre="Rompecabezas Paisaje Japon" data-id="rompecabezas">
+          <div class="imagen"><img src="img/rompecabezas.jpg" alt="Rompecabezas Paisaje Japón"></div>
+          <div class="info">
+            <small>Juegos de mesa</small>
+            <h3>Rompecabezas Paisaje Japón</h3>
+            <p>Rompecabezas de 1000 piezas con paisaje japonés.</p>
+            <div class="pie-producto">
+              <strong>$ 22.000</strong>
+              <button class="agregar-carrito" data-id="rompecabezas" data-nombre="Rompecabezas Paisaje Japon" data-precio="22000" data-imagen="img/rompecabezas.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="rompecabezas">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Maquetas" data-nombre="Ford Mustang GT" data-id="mustang">
+          <div class="imagen"><img src="img/mustang.jpg" alt="Ford Mustang GT"></div>
+          <div class="info">
+            <small>Maquetas</small>
+            <h3>Ford Mustang GT</h3>
+            <p>Modelo a escala 1:18 del clásico Mustang GT.</p>
+            <div class="pie-producto">
+              <strong>$ 78.000</strong>
+              <button class="agregar-carrito" data-id="mustang" data-nombre="Ford Mustang GT" data-precio="78000" data-imagen="img/mustang.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="mustang">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Figuras y miniaturas" data-nombre="Set Miniaturas Medievales" data-id="medievales">
+          <div class="imagen"><img src="img/medievales.jpg" alt="Set Miniaturas Medievales"></div>
+          <div class="info">
+            <small>Figuras y miniaturas</small>
+            <h3>Set Miniaturas Medievales</h3>
+            <p>Conjunto de miniaturas de guerreros medievales.</p>
+            <div class="pie-producto">
+              <strong>$ 32.000</strong>
+              <button class="agregar-carrito" data-id="medievales" data-nombre="Set Miniaturas Medievales" data-precio="32000" data-imagen="img/medievales.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="medievales">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Figuras y miniaturas" data-nombre="Dados poliedricos" data-id="dados">
+          <div class="imagen"><img src="img/dados.jpg" alt="Dados poliédricos"></div>
+          <div class="info">
+            <small>Figuras y miniaturas</small>
+            <h3>Dados poliédricos</h3>
+            <p>Set de dados para juegos de rol y mesa.</p>
+            <div class="pie-producto">
+              <strong>$ 9.500</strong>
+              <button class="agregar-carrito" data-id="dados" data-nombre="Dados poliedricos" data-precio="9500" data-imagen="img/dados.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="dados">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Cartas coleccionables" data-nombre="Fundas transparentes" data-id="fundas">
+          <div class="imagen"><img src="img/fundas.jpg" alt="Fundas transparentes"></div>
+          <div class="info">
+            <small>Cartas coleccionables</small>
+            <h3>Fundas transparentes</h3>
+            <p>Paquete de fundas protectoras para cartas coleccionables.</p>
+            <div class="pie-producto">
+              <strong>$ 4.000</strong>
+              <button class="agregar-carrito" data-id="fundas" data-nombre="Fundas transparentes" data-precio="4000" data-imagen="img/fundas.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="fundas">Marcar agotado</button>
+          </div>
+        </article>
+
+        <article class="producto" data-categoria="Maquetas" data-nombre="Puzzle 3D Torre" data-id="puzzle3d">
+          <div class="imagen"><img src="img/puzzle3d.jpg" alt="Puzzle 3D Torre"></div>
+          <div class="info">
+            <small>Maquetas</small>
+            <h3>Puzzle 3D Torre</h3>
+            <p>Puzzle tridimensional de una torre. Ideal para armar y exhibir.</p>
+            <div class="pie-producto">
+              <strong>$ 27.500</strong>
+              <button class="agregar-carrito" data-id="puzzle3d" data-nombre="Puzzle 3D Torre" data-precio="27500" data-imagen="img/puzzle3d.jpg">Agregar</button>
+            </div>
+            <button class="btn-agotado admin-only" data-id="puzzle3d">Marcar agotado</button>
+          </div>
+        </article>
+
+      </div>
+
+      <p id="sin-resultados" hidden>No se encontraron productos.</p>
+      <p class="aviso">Precios orientativos. Consultá disponibilidad.</p>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section class="seccion blanco" id="opiniones">
+    <div class="contenedor">
+      <p class="etiqueta">LO QUE DICEN LOS CLIENTES</p>
+      <h2>Opiniones</h2>
+
+      <div class="opiniones-grid">
+        <div class="lista-comentarios" id="lista-comentarios"></div>
+
+        <div class="formulario-comentario">
+          <h3>Dejá tu opinión</h3>
+          <form id="form-comentario">
+            <input type="text" id="comentario-nombre" placeholder="Tu nombre" required maxlength="40">
+            <textarea id="comentario-texto" placeholder="Escribí tu comentario..." required maxlength="400" rows="4"></textarea>
+            <button type="submit" class="boton">Enviar comentario</button>
+          </form>
+          <p class="aviso-form" id="aviso-comentario" hidden>¡Gracias por tu comentario!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRANJA -->
+  <section class="franja">
+    <div class="contenedor franja-grid">
+      <div>
+        <p class="etiqueta">¿BUSCÁS ALGO ESPECIAL?</p>
+        <h2>Tu próxima pieza puede estar acá.</h2>
+        <p>Escribinos por WhatsApp para consultar disponibilidad.</p>
+      </div>
+      <a class="boton boton-claro" href="#contacto">Contactanos</a>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="seccion blanco" id="contacto">
+    <div class="contenedor contacto">
+      <div>
+        <p class="etiqueta">ESTAMOS PARA AYUDARTE</p>
+        <h2>Hablemos de tu colección</h2>
+        <p>Consultá por los productos que te interesan o por tu pedido del carrito.</p>
+      </div>
+      <div class="tarjeta-contacto">
+        <p><strong>WhatsApp:</strong> +54 9 351 XXX-XXXX</p>
+        <p><strong>Correo:</strong> contacto@ejemplo.com</p>
+        <p><strong>Horario:</strong> Lunes a viernes, de 9 a 18 h</p>
+        <button class="boton" id="boton-contacto">Mostrar mensaje de contacto</button>
+        <p id="mensaje" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="contenedor pie-final">
+    <strong>✦ Colección Épica</strong>
+    <span>Proyecto de práctica HTML, CSS y JavaScript</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
